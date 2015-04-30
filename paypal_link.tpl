@@ -84,18 +84,21 @@ function fnCheckSubmit() {
     </tr>
   </table>
 
-  <div class="btn_area">
+  <div class="btn_area row">
   <!--{if $tpl_redirect}-->
     <p><a href="javascript:;" onclick="document.form1.submit(); return false;" class="attention">PayPal決済サイトへ遷移しています。しばらくお待ち下さい。</a></p>
   <!--{else}-->
-    <ul>
-      <li>
-        <a href="javascript:;" onclick="document.form2.submit(); return false;" onmouseover="chgImg('<!--{$TPL_URLPATH}-->img/button/btn_back_on.jpg','back03')" onmouseout="chgImg('<!--{$TPL_URLPATH}-->img/button/btn_back.jpg','back03')">
-        <img src="<!--{$TPL_URLPATH}-->img/button/btn_back.jpg" alt="戻る" border="0" name="back03" id="back03" /></a>
-      </li>
-      <li>
-        <input type="image" onclick="return fnCheckSubmit();" onmouseover="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_next_on.jpg',this)" onmouseout="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_next.jpg',this)" src="<!--{$TPL_URLPATH}-->img/button/btn_next.jpg" alt="次へ" name="next" id="next" />
-      </li>
+    <div class="col-sm-3 padding-right-none hidden-xs">
+        <a href="javascript:;" onclick="document.form2.submit(); return false;" class="btn btn-default btn-block">戻る</a>
+    </div>
+    <div class="col-sm-6">
+      <button name="next" id="next" class="btn btn-primary btn-block xs-btn-lg sm-btn-lg" onclick="return fnCheckSubmit();">
+        次へ
+      </button>
+    </div>
+    <div class="col-xs-12 visible-xs margin-top-sm">
+        <a href="javascript:;" onclick="document.form2.submit(); return false;" class="btn btn-default btn-sm btn-block">戻る</a>
+    </div>
   <!--{/if}-->
   </div>
   </form>
