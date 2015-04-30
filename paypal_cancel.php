@@ -42,7 +42,7 @@ class LC_Page_User extends LC_Page_Ex {
      */
     function action() {
         $objPurchase = new SC_Helper_Purchase_Ex();
-        $objPurchase->cancelOrder($_SESSION['order_id']);
+        $objPurchase->rollbackOrder($_SESSION['order_id']);
         $this->tpl_mainpage = $this->getTplMainpage();
         unset($_SESSION['order_id']);
     }
