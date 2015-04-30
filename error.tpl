@@ -25,17 +25,20 @@
 <!--CONTENTS-->
 <div id="undercolumn">
     <div id="undercolumn_shopping">
-        <p class="flow_area"><img src="<!--{$TPL_URLPATH}-->img/picture/img_flow_03.jpg" alt="購入手続きの流れ" /></p>
+        <p class="flow_area">
+            <!--{include file="`$smarty.const.TEMPLATE_REALDIR`shopping/process/step3.tpl"}-->
+        </p>
         <h2 class="title"><!--{$tpl_title|h}--></h2>
 
         <p class="attention">購入中にエラーが発生しました:<br /><!--{$tpl_message}--></p>
 
-        <div class="btn_area">
-            <ul>
-                <li>
-                    <a href="<!--{$smarty.const.CART_URLPATH}-->" onmouseover="chgImg('<!--{$TPL_URLPATH}-->img/button/btn_back_on.jpg','back<!--{$key}-->');" onmouseout="chgImg('<!--{$TPL_URLPATH}-->img/button/btn_back.jpg','back<!--{$key}-->');"><img src="<!--{$TPL_URLPATH}-->img/button/btn_back.jpg" alt="戻る" name="back<!--{$key}-->" /></a>
-                </li>
-              </ul>
+        <div class="btn_area row">
+            <div class="col-sm-3 padding-right-none hidden-xs">
+                <a href="<!--{$smarty.const.CART_URLPATH}-->" class="btn btn-default btn-block">戻る</a>
+            </div>
+            <div class="col-xs-12 visible-xs margin-top-sm">
+                <a href="<!--{$smarty.const.CART_URLPATH}-->" class="btn btn-default btn-block">戻る</a>
+            </div>
         </div>
     </div>
 </div>
